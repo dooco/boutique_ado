@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'v+7xrbv#sh4wv5d^sr3d8b*pg&&9^!rtr1#!l
 # DEBUG = 'DEVELOPMENT' in os.environ
 DEBUG = True
 
-ALLOWED_HOSTS = ['dooco-boutique-ado.herokuapp.com', '127.0.0.1:8000']
+ALLOWED_HOSTS = ['dooco-boutique-ado.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -216,7 +216,7 @@ if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = 'boutiqueado@example.com'
 else:
-    EMAIL_BACKEND = 'django.core.mail.backends.smpt.EmailBackend'
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True
     EMAIL_PORT = 587
     EMAIL_HOST = 'smtp.gmail.com'
