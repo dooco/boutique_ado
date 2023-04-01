@@ -31,7 +31,6 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['dooco-boutique-ado.herokuapp.com', '127.0.0.1']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -106,8 +105,6 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 
-
-
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
@@ -121,6 +118,7 @@ WSGI_APPLICATION = 'boutique_ado.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
@@ -129,12 +127,12 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-DATABASES = {
-     'default': dj_database_url.parse('postgres://drtwxlgm:vvM5xV3eP9pgXpHjTxOSH0BGRxvg3eb9@trumpet.db.elephantsql.com/drtwxlgm')
- }
+# DATABASES = {
+#      'default': dj_database_url.parse('postgres://drtwxlgm:vvM5xV3eP9pgXpHjTxOSH0BGRxvg3eb9@trumpet.db.elephantsql.com/drtwxlgm')
+#  }
 
 
 # Password validation
