@@ -26,8 +26,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', 'v+7xrbv#sh4wv5d^sr3d8b*pg&&9^!rtr1#!l&w%r9wl^(zo@o')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = 'DEVELOPMENT' in os.environ
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
+
 
 ALLOWED_HOSTS = ['dooco-boutique-ado.herokuapp.com', '127.0.0.1']
 
